@@ -1,0 +1,439 @@
+/* estilos base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Signika Negative', sans-serif;
+  background-color: #F5F5F5;
+}
+
+
+
+/* header
+****************************/
+.header {
+  width: 100%;
+  background-color: #fff;
+}
+.header a {
+  text-decoration: none;
+}
+.child-header {
+  max-width: 1400px;
+  padding: 0 5%;
+  margin: 0 auto 0;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* logo
+****************************/
+.link-logo {
+  font-weight: 700;
+  color: #000;
+  font-size: 28px;
+}
+
+
+
+/* menu de navegacion
+****************************/
+.box-menu-navegacion {
+  width: 50%;
+}
+.box-menu-navegacion ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+.menu-navegacion {  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-menu-link {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  transition: .3s linear;
+  padding: 1.8rem 0;
+  display: inline-block;
+}
+
+/* hover */
+.item-menu-link:hover {
+  color: #d92626;
+}
+.item-menu-sub-menu:hover i {
+  color: #d92626;
+  transition: .3s linear;
+}
+
+
+
+
+/* boton hamburguesa
+****************************/
+.btn-hamburguesa {
+  display: none;
+  background-color: transparent;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+.btn-hamburguesa span {
+  height: 2px;
+  display: block;
+  background-color: #000;
+  width: 25px;
+  border-radius: 20px;
+}
+.btn-hamburguesa span:nth-child(2) {
+  margin: .4rem 0;
+}
+
+
+
+/* sub menu
+****************************/
+.item-menu-sub-menu {
+  position: relative;
+}
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;
+  background-color: #fff;
+  transform: scaley(0);
+  transform-origin: top;
+  transition: transform .3s linear;
+}
+.sub-menu .item-menu-link {
+  padding: .8rem;
+}
+
+/* hover */
+.item-menu-sub-menu:hover .sub-menu {
+  transform: scaley(1);
+}
+
+
+
+
+
+@media screen and (max-width: 980px) {
+  /* boton hamburguesa
+  ****************************/
+  .btn-hamburguesa {
+    display: block;
+  }
+  
+  /*  header
+  ****************************/
+  .header {
+    position: relative;
+    padding: 1rem 0;
+  }
+  
+  /*  menu de navegacion
+  ****************************/
+  .box-menu-navegacion {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    transform: scaley(0);
+    transform-origin: top;
+    transition: .3s linear;
+    padding: 0 2rem;
+  }
+  .menu-navegacion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .item-menu-link {
+    padding: 1rem 0;
+  }
+  .item-menu-sub-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .angle-view-sub-menu {
+    border: 1px solid #000;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    padding: .2rem 0;
+  }
+  .sub-menu {
+    width: 100%;
+    position: initial;
+    transform: scaley(1);
+    display: none;
+  }
+  
+  
+  /*  activador sub menu
+  ****************************/
+  .viewMenu {
+    transform: scaley(1);
+  }
+
+  
+  /*  hover
+  ****************************/
+  .item-menu-link:hover,
+  .item-menu-sub-menu:hover i {
+    color: initial;
+  }
+}
+
+/*CUERPO DE LA PAGINA*/
+p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align:center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .box {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  background: #fff;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.container .box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0;
+  object-fit: cover;
+}
+.container .box:before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #f0f2f0;
+  z-index: 1;
+  transition: 0.5s;
+}
+.container .box:after {
+  content: "";
+  opacity: 0.9;
+  position: absolute;
+  bottom: -100%;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  z-index: 1;
+  transition: 0.5s;
+}
+.container:hover .box:before {
+  top: 0;
+}
+.container:hover .box:after {
+  bottom: 0;
+  transition-delay: 0.5s;
+}
+.container .box:hover:before {
+  top: -100%;
+}
+.container .box:hover:after {
+  bottom: -100%;
+}
+/*CUERPO PARTE DOS*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+h1, h2, h3 {
+  margin: 20px 0;
+  color: #00695C;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+img {
+  max-width: 500px;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+/* OPTION 1 */
+.overlay-outer {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.overlay {
+  background: rgba(4,125,67,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+a:hover .overlay {
+  opacity: 1;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.overlay-outer:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3 {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p {
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeIn_bottom {
+  top: 80%;
+}
+/*  */
+
+/* OPTION 2 */
+.hover_color {
+  position: relative;
+  margin: 0;
+  display: inline-block;
+}
+
+.hover_color::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  background: rgba(246,227,75,.8);
+  transition: all 350ms;
+  /*this. this is stupid. to get rid of that empty space. I don't know what causes it*/
+/*   margin-bottom: 3px;  */
+}
+
+/* top or bottom, to choose where it starts */
+.hover_color:hover::before {
+  top: 0;
+}
+
+.hover_color img {
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+  /*alternate solution for that stupid space at the bottom*/
+  margin-bottom: -3px;
+/*  if the title is always there and you need to darken the background:
+ filter: brightness(40%); */
+}
+
+.hover_color .hover_color-inner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hover_title {
+    transform: translateY(-4px);
+    opacity: 0; /*or 1, if the title is always visible*/
+    transition: all 350ms;
+}
+
+.hover_color a {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/* don't need this if the title is always visible */
+.hover_color:hover .hover_title {
+  transform: translateY(0);
+  opacity: 1;
+}
+/*  */
